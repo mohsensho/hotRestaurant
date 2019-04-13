@@ -8,13 +8,25 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="container">
+        <style>
+            div.homePageContainer {
+                text-align: center;
+            }
+        </style>
+        <div class="container homePageContainer">
             <div class="jumbotron">
-                <h2><span class="glyphicon glyphicon-fire"></span></i>Hot Restaurant</h1>
+                <h1><span class="glyphicon glyphicon-fire"></span></i>Hot Restaurant</h1>
                 <h3>We only have 5 tables! Book your seat before they are all gone!</h3>
+                <br>
                 <a href="/view"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
 				<a href="/make"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
             </div>
         </div>
+
+        <footer class="footer">
+                <div class="container">
+                  <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> </p>
+                </div>
+              </footer>
     </body>
 </html>
