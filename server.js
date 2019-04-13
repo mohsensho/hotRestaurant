@@ -18,6 +18,12 @@ var waitList = [];
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
+<<<<<<< HEAD
+  });
+  
+  app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+=======
   });
   
   app.get("/make", function(req, res) {
@@ -26,6 +32,7 @@ app.get("/", function(req, res) {
   
   app.get("/view", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
+>>>>>>> 807bdcddb9a7ec3453cc07e984142b927c95d3ab
   });
 
   app.post("/api/reservations", function(req, res) {
@@ -37,7 +44,12 @@ app.get("/", function(req, res) {
   
     customerTables.push(newReservation);
   
+<<<<<<< HEAD
+  app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+=======
     res.json(newReservation);
+>>>>>>> 807bdcddb9a7ec3453cc07e984142b927c95d3ab
   });
  
 
