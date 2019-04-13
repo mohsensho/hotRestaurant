@@ -10,22 +10,13 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var customers = [
-    {
-    custName: "",
-    phoneNum: "",
-    custEmail: "",
-    custID: ""
-    }
-]
+var customerTables = [];
+
+var waitList = [];
 
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
-  });
-  
-  app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserve.html"));
   });
   
   app.get("/make", function(req, res) {
@@ -36,15 +27,24 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
   });
 
-  app.post("/api/reservations", function(req, res) {
-    console.log("log: "+req.body.reserve_name);
+  app.get("/api/reservations", function(req, res) {
+    // console.log('res get');
+    // console.log(res);
+    // console.log("log: "+req.body.reserve_name);
 
     var newReservation = req.body;
-  
-    // console.log(newReservation);
-  
+    console.log(newReservation);
     customerTables.push(newReservation);
+    
+    
+    res.sendFile(path.join(__dirname, "tables.html"));
+    res.end("blah!!");
   }); 
+  app.post("/api/reservations", function(req, res) {
+    console.log('res post');
+    res.end("post done");
+  });
+
   app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
     res.json(newReservation);
