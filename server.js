@@ -29,7 +29,7 @@ app.get("/", function(req, res) {
   });
 
   app.post("/api/reservations", function(req, res) {
-    console.log("log: "+req.body.reserve_email);
+    console.log("log: "+req.body.reserve_name);
 
     var newReservation = req.body;
   
