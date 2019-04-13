@@ -10,10 +10,14 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var customerTables = [];
-
-var waitList = [];
-
+var customers = [
+    {
+    custName: "",
+    phoneNum: "",
+    custEmail: "",
+    custID: ""
+    }
+]
 
 
 app.get("/", function(req, res) {
@@ -45,7 +49,6 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
     res.json(newReservation);
   });
- 
 
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
